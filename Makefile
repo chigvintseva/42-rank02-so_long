@@ -1,0 +1,63 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/11/16 16:24:27 by achigvin          #+#    #+#              #
+#    Updated: 2025/11/16 16:26:34 by achigvin         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = so_long
+
+LIBFT = libft/libft.a
+
+CC = cc
+CFLAGS = -Wall -Wextra -Werror
+
+
+#---------- maps and textures??--------
+
+
+# ---------
+
+SRC_DIR = src
+SRC = 
+
+# ------------creating objects---
+OBJ_DIR = objects_push_swap
+OBJ = $(addprefix $(OBJ_DIR)/,$(SRC_DIR)/$(SRC:.c=.o))
+
+# -------- name rule --------
+all: $(LIBFT) $(NAME)
+
+# --------- main compilation-----------
+$(NAME): $(OBJ) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $@
+
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+	
+$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# ------ libft compilation, -C flag is for "change directory to the subdirectory libft"
+$(LIBFT):
+	$(MAKE) -C libft
+
+# --------- clean fclean re rules-----------
+clean:
+	rm -f $(OBJ)
+	$(MAKE) -C libft clean
+
+fclean: clean
+	rm -f $(NAME)
+	$(MAKE) -C libft fclean
+	rm -rf $(OBJ_DIR)
+
+re: fclean all
+
+# -------------------
+.PHONY: all clean fclean re
