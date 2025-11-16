@@ -6,7 +6,7 @@
 #    By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/16 16:24:27 by achigvin          #+#    #+#              #
-#    Updated: 2025/11/16 16:26:34 by achigvin         ###   ########.fr        #
+#    Updated: 2025/11/16 16:49:37 by achigvin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,36 +16,38 @@ LIBFT = libft/libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-
+MLXFLAGS = -Iminilibx-linux -Lminilibx-linux -lmlx -lXext -lX11 -lm -lz -02 -g
 
 #---------- maps and textures??--------
 
 
 # ---------
 
-SRC_DIR = src
-SRC = 
+SRC = main.c \
+	
 
 # ------------creating objects---
 OBJ_DIR = objects_push_swap
-OBJ = $(addprefix $(OBJ_DIR)/,$(SRC_DIR)/$(SRC:.c=.o))
+OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 # -------- name rule --------
 all: $(LIBFT) $(NAME)
 
 # --------- main compilation-----------
 $(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $@
-
-$(OBJ_DIR):
-	mkdir -p $(OBJ_DIR)
-	
-$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(OBJ) $(MLXFLAGS) $(LIBFT) -o $@
 
 # ------ libft compilation, -C flag is for "change directory to the subdirectory libft"
 $(LIBFT):
 	$(MAKE) -C libft
+
+# --------------objects compilation ---
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
+	
+$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
+	$(CC) $(CFLAGS) $(MLXFLAGS) -c $< -o $@
+
 
 # --------- clean fclean re rules-----------
 clean:
