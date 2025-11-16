@@ -1,38 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   map_parsing.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/16 16:22:03 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/16 22:47:02 by achigvin         ###   ########.fr       */
+/*   Created: 2025/11/17 00:04:13 by achigvin          #+#    #+#             */
+/*   Updated: 2025/11/17 00:04:21 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "so_long.h"
 
-# include "libft/libft.h"
-# include "mlx.h"
-# include "X11/keysym.h"
-# include <stdlib.h>
-# include <unistd.h>
-# include <math.h>
-# include "sys/time.h"
-
-# define W_WIDTH 800
-# define W_HEIGHT 600
-
-// couolrs defines in hex:
-
-typedef struct s_data {
-	void	*img;
-	char	*addr;
-	int		bits_per_pixel;
-	int		line_length;
-	int		endian;
-}	t_data;
-
-
-#endif

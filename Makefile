@@ -6,7 +6,7 @@
 #    By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/16 16:24:27 by achigvin          #+#    #+#              #
-#    Updated: 2025/11/16 17:18:01 by achigvin         ###   ########.fr        #
+#    Updated: 2025/11/17 00:06:18 by achigvin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,13 @@ MLXFLAGS = -Lminilibx-linux -lmlx -lXext -lX11 -lm -lz
 # ---------
 
 SRC = main.c \
+		input_keys.c \
+		map_parsing.c \
+		render_map_graphics.c \
 	
 
 # ------------creating objects---
-OBJ_DIR = objects_push_swap
+OBJ_DIR = obj
 OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
 
 # -------- name rule --------
