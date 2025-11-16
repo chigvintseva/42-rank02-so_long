@@ -6,7 +6,7 @@
 #    By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/13 19:20:27 by achigvin          #+#    #+#              #
-#    Updated: 2025/11/13 21:29:03 by achigvin         ###   ########.fr        #
+#    Updated: 2025/11/16 23:57:01 by achigvin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,10 @@ SRC_PRINTF = ft_printf/ft_printf.c ft_printf/ft_charinput.c \
              ft_printf/ft_ltoa.c ft_printf/ft_printf_styled.c \
              ft_printf/colours.c
 
-SRC = $(SRC_LIBFT) $(SRC_PRINTF)
+SRC_GNL = gnl/get_next_line.c \
+			gnl/get_next_line_utils.c
+
+SRC = $(SRC_LIBFT) $(SRC_PRINTF) $(SRC_GNL)
 
 OBJ_DIR = objects
 OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
@@ -44,6 +47,7 @@ $(NAME): $(OBJ)
 
 $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)/ft_printf
+	mkdir -p $(OBJ_DIR)/gnl
 
 $(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@

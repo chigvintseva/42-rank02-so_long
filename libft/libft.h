@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 17:51:35 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/13 21:15:06 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/16 23:57:46 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <stdint.h>
 # include "ft_printf/ft_printf.h"
+# include "gnl/get_next_line.h"
 
 typedef struct s_list
 {
