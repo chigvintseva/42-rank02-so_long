@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:22:03 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/16 16:50:59 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/16 17:06:03 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include <math.h>
 # include "sys/time.h"
 
-# define W_WIDTH
-# define W_HEIGHT
+# define W_WIDTH 1920
+# define W_HEIGHT 1080
 
 // couolrs defines in hex:
 

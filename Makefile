@@ -6,7 +6,7 @@
 #    By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/16 16:24:27 by achigvin          #+#    #+#              #
-#    Updated: 2025/11/16 16:49:37 by achigvin         ###   ########.fr        #
+#    Updated: 2025/11/16 17:18:01 by achigvin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,8 @@ NAME = so_long
 LIBFT = libft/libft.a
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
-MLXFLAGS = -Iminilibx-linux -Lminilibx-linux -lmlx -lXext -lX11 -lm -lz -02 -g
+CFLAGS = -Wall -Wextra -Werror -Iminilibx-linux -O2 -g
+MLXFLAGS = -Lminilibx-linux -lmlx -lXext -lX11 -lm -lz
 
 #---------- maps and textures??--------
 
@@ -35,7 +35,7 @@ all: $(LIBFT) $(NAME)
 
 # --------- main compilation-----------
 $(NAME): $(OBJ) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJ) $(MLXFLAGS) $(LIBFT) -o $@
+	$(CC) $(CFLAGS) $(OBJ) $(MLXFLAGS) $(LIBFT) -o $(NAME)
 
 # ------ libft compilation, -C flag is for "change directory to the subdirectory libft"
 $(LIBFT):
@@ -46,7 +46,7 @@ $(OBJ_DIR):
 	mkdir -p $(OBJ_DIR)
 	
 $(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
-	$(CC) $(CFLAGS) $(MLXFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 
 # --------- clean fclean re rules-----------
