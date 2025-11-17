@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:22:03 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 16:45:22 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:34:35 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,7 @@ int		is_valid_char(char c);
 void	init_counts(t_counts *counts);
 void	process_char(t_game *game, t_counts *counts, int i, int j);
 void	count_elements(t_game *game, t_counts *counts);
+int		count_collectables(t_game *game);
 
 // fill the map from the file input data (when valid)
 char	**create_visited_map(t_game *game);

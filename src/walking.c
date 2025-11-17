@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 11:51:05 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 17:21:51 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:37:01 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 
 void	is_exit(t_game *game, int x, int y)
 {
-	if (game->map.map_sketch[x][y] == 'E')
+	if (game->map.map_sketch[y][x] == 'E')
 	{
 		if (game->collected == game->to_collect)
 		{
-			ft_printf_styled("Congratulations!\n", 'w', 'b');
-			ft_printf("You won in %d moves!\n", game->moves);
+			ft_printf_styled("Congratulations!\n", 'y', 'b');
+			ft_printf_styled("You won in ", 'y', 'b');
+			ft_printf("%d", game->moves);
+			ft_printf_styled(" moves!\n", 'y', 'b');
 			success_game(game);
 		}
 		else
 		{
 			ft_printf_styled("Ops... You dont have enough socks...\n", 'r', 0);
 			ft_printf_styled("Collect all items first!\n", 'r', 'b');
-			printf("Ready for laundary basket now: only %d out of %d", game->collected, game->to_collect);
+			ft_printf("Ready for laundary basket now: only %d out of %d\n", game->collected, game->to_collect);
 		}
 	}
 }
@@ -47,7 +49,7 @@ int	can_walk(t_game *game, int new_x, int new_y)
 		return (0);
 	if (new_y < 0 || new_y >= (game->map.rows))
 		return (0);
-	if (game->map.map_sketch[new_x][new_y] == '1')
+	if (game->map.map_sketch[new_y][new_x] == '1')
 		return (0);
 	return (1);
 }

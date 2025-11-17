@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 09:17:36 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 13:38:51 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:34:39 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ void	render_game_part(t_game *game, char part, int x, int y)
 	place_img_in_game(game, game->floor.img, x, y);
 	if (part == '1')
 		place_img_in_game(game, game->wall.img, x, y);
-	else if (part == 'P')
-		place_img_in_game(game, game->player_img.img, x, y);
 	else if (part == 'E')
 		place_img_in_game(game, game->exit.img, x, y);
 	else if (part == 'C')
@@ -46,4 +44,5 @@ void	render_map(t_game *game)
 		}
 		i++;
 	}
+	place_img_in_game(game, game->player_img.img, game->player.x, game->player.y);
 }
