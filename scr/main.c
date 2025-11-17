@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:57:15 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 13:38:21 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:54:42 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 	start_game(&game);
 	load_textures(&game);
 	render_map(&game);
-	
+	register_hooks(&game);
 	mlx_loop(game.mlx);
 	return (0);
 }
