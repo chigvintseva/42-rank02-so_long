@@ -2,11 +2,11 @@
 static char *_fa43ff8ba094b2baf22868c4396d134[] = {
 /* columns rows colors chars-per-pixel */
 "64 64 156 2 ",
-"   c #000001",
-".  c #090A05",
-"X  c #020209",
-"o  c #131218",
-"O  c #47464B",
+"   c #9CAEBA",
+".  c #A4BCC8",
+"X  c #B8C6D1",
+"o  c #95A9B4",
+"O  c #A4B6C2",
 "+  c #57555D",
 "@  c #58575E",
 "#  c #5A595F",

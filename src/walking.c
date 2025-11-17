@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 11:51:05 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 17:10:35 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:21:51 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,15 @@ void	is_collectable(t_game *game, int x, int y)
 	{
 		game->map.map_sketch[y][x] = '0';
 		game->collected++;
-		ft_printf_styled("Found 1 pair of dirty socks!\n", 'w', 'i');
+		ft_printf_styled("Found 1 pair of dirty socks!\n", 'g', 0);
 	}
 }
 
 int	can_walk(t_game *game, int new_x, int new_y)
 {
-	if (new_x <= 0 || new_x >= (game->map.columns))
+	if (new_x < 0 || new_x >= (game->map.columns))
 		return (0);
-	if (new_y <= 0 || new_y >= (game->map.rows))
+	if (new_y < 0 || new_y >= (game->map.rows))
 		return (0);
 	if (game->map.map_sketch[new_x][new_y] == '1')
 		return (0);

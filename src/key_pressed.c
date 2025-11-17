@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 09:17:26 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 17:10:13 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:22:38 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int	close_window(t_game *game)
 {
+	ft_printf_styled("------------------\n", 'r', 0);
 	ft_printf_styled("Window was closed.\n", 'r', 0);
 	success_game(game);
 	return (0);
