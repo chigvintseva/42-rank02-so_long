@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 11:51:05 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 12:18:33 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:03:33 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,28 @@ void	is_collectable(t_game *game, int x, int y)
 	}
 }
 
-void	can_walk(t_game *game, int x, int y)
+int	can_walk(t_game *game, int x, int y)
 {
 	
 }
-void	walk(t_game *game, int to_walk_x, int to_walk_y)
+void	walk(t_game *game, int to_x, int to_y)
 {
 	int	new_x;
 	int	new_y;
 
-	
+	new_x = game->player.x + to_x;
+	new_y = game->player.y + to_y;
+	if (!can_walk(game, new_x, new_y))
+	{
+		ft_printf_styled("Can't go there :(", 'y', 'i');
+		return ;
+	}
+	game->player.x = new_x;
+	game->player.y = new_y;
+	game->moves++;
+	ft_printf_styled("Moves count so far: ", 'w', 'i');
+	ft_printf("%d\n", game->moves);
+	is_collectable(game, new_x, new_y);
+	is_exit(game, new_x, new_y);
+	render_map(game);
 }
