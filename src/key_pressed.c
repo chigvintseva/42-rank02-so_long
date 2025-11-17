@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 09:17:26 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 13:38:12 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 14:03:39 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	close_window(t_game *game)
 {
 	ft_printf_styled("Window was closed.\n", 'r', 'b');
 	success_game(game);
-	reurn (0);
+	return (0);
 }
 
 int	key_pressed(t_game *game, int key_pressed)
@@ -37,7 +37,7 @@ int	key_pressed(t_game *game, int key_pressed)
 	else if (key_pressed == D_KEY || key_pressed == RIGHT)
 		to_x = 1;
 	else
-		return ;
+		return (0);
 	walk(game, to_x, to_y);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 11:51:05 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 13:39:07 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 14:08:36 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	is_exit(t_game *game, int x, int y)
 
 void	is_collectable(t_game *game, int x, int y)
 {
-	if (game->map.map_sketch == 'C')
+	if (game->map.map_sketch[y][x] == 'C')
 	{
 		game->map.map_sketch[y][x] = '0';
 		game->collected++;
@@ -46,7 +46,7 @@ int	can_walk(t_game *game, int new_x, int new_y)
 	if (new_x <= 0 || new_x >= (game->map.columns))
 		return (0);
 	if (new_y <= 0 || new_y >= (game->map.rows))
-		returh (0);
+		return (0);
 	if (game->map.map_sketch[new_x][new_y] == '1')
 		return (0);
 	return (1);
