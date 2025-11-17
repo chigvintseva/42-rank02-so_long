@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:22:03 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 13:36:28 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 16:45:22 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 # define PLAYER_IMG "./textures/player.xpm"
 # define COLLECT_IMG "./textures/collect.xpm"
 # define WALL_IMG "./textures/wall.xpm"
-# define FLOOR_IMG "./textures/floor_img.xpm"
+# define FLOOR_IMG "./textures/floor.xpm"
 
 # define TILE 64
 
@@ -157,7 +157,8 @@ void	walk(t_game *game, int to_x, int to_y);
 
 // key_pressed.c
 int		close_window(t_game *game);
-int		key_pressed(t_game *game, int key_pressed);
-void	register_hooks(t_game *game);
+int		key_pressed( int key_pressed, t_game *game);
+void	cross_hook(t_game *game);
+void	keyboard_hook(t_game *game);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 11:51:05 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 14:08:36 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:10:35 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	walk(t_game *game, int to_x, int to_y)
 	new_y = game->player.y + to_y;
 	if (!can_walk(game, new_x, new_y))
 	{
-		ft_printf_styled("Can't go there :(", 'y', 'i');
+		ft_printf_styled("Can't go there :(\n", 'y', 'i');
 		return ;
 	}
 	game->player.x = new_x;

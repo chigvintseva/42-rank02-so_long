@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 09:17:26 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 14:03:39 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:10:13 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int	close_window(t_game *game)
 {
-	ft_printf_styled("Window was closed.\n", 'r', 'b');
+	ft_printf_styled("Window was closed.\n", 'r', 0);
 	success_game(game);
 	return (0);
 }
 
-int	key_pressed(t_game *game, int key_pressed)
+int	key_pressed(int key_pressed, t_game *game)
 {
 	int	to_x;
 	int	to_y;
@@ -42,8 +42,12 @@ int	key_pressed(t_game *game, int key_pressed)
 	return (0);
 }
 
-void	register_hooks(t_game *game)
+void	keyboard_hook(t_game *game)
 {
 	mlx_hook(game->mlx_win, KEYBOARD_KEY_PRESSED, KEYBOARD_MASK, key_pressed, game);
+}
+
+void	cross_hook(t_game *game)
+{
 	mlx_hook(game->mlx_win, WIN_CROSS_PRESSED, WIN_CROSS_MASK, close_window, game);
 }

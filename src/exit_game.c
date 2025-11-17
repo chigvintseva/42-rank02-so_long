@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 04:21:52 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 13:38:28 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:11:24 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ void	success_game(t_game *game)
 		mlx_destroy_window(game->mlx, game->mlx_win);
 	if (game->mlx)
 		mlx_destroy_display(game->mlx);
-	ft_printf_styled("Game is finised, thx for playing :)", 'r', 0);
+	ft_printf_styled("Game is finised, thx for playing :)", 'g', 'b');
 	exit(EXIT_SUCCESS);
 }
