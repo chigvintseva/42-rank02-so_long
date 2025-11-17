@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 03:03:11 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 04:26:20 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 09:01:24 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ void	init_game(t_game *game)
 	game->mlx = NULL;
 	game->mlx_win = NULL;
 	game->moves = 0;
+	game->collected = 0;
+	game->to_collect = 0;
 	game->map.map_sketch = NULL;
 	game->map.rows = 0;
 	game->map.columns = 0;

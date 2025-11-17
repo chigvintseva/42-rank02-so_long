@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:22:03 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 04:52:23 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 09:02:47 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,23 @@
 
 # define W_WIDTH 32
 # define W_HEIGHT 32
+
+# define ESC 53
+
+# define EXIT_IMG "./textures/exit.xpm"
+# define PLAYER_IMG "./textures/player.xpm"
+# define COLLECT_IMG "./textures/collect.xpm"
+# define WALL_IMG "./textures/wall.xpm"
+# define FLOOR_IMG "./textures/floor_img.xpm"
+
+# define W 119
+# define A 97
+# define S 115
+# define D 100
+# define UP 65362
+# define LEFT 65361
+# define DOWN 65364
+# define RIGHT 65363
 
 // player position
 typedef struct s_position
@@ -60,15 +77,18 @@ typedef struct s_counts
 // all game info (prev.structs) + playing setup n moves
 typedef struct s_game
 {
-	void			*mlx;
-	void			*mlx_win;
-	int				moves;
-	t_map			map;
-	t_position		player;
-	t_image			wall;
-	t_image			collect;
-	t_image			exit;
-	t_image			space;
+	void		*mlx;
+	void		*mlx_win;
+	int			moves;
+	int			to_collect;
+	int			collected;
+	t_map		map;
+	t_position	player;
+	t_image		wall;
+	t_image		collect;
+	t_image		exit;
+	t_image		floor;
+	t_image		player_img;
 }	t_game;
 
 // exit rules
