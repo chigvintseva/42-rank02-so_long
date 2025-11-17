@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 09:17:26 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 17:22:38 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:41:37 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ int	key_pressed(int key_pressed, t_game *game)
 
 void	keyboard_hook(t_game *game)
 {
-	mlx_hook(game->mlx_win, KEYBOARD_KEY_PRESSED, KEYBOARD_MASK, key_pressed, game);
+	mlx_hook(game->mlx_win, KEYBOARD_KEY_PRESSED, KEYBOARD_MASK,
+		key_pressed, game);
 }
 
 void	cross_hook(t_game *game)

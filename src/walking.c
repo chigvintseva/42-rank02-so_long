@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 11:51:05 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 17:37:01 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:41:37 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ void	is_exit(t_game *game, int x, int y)
 		{
 			ft_printf_styled("Ops... You dont have enough socks...\n", 'r', 0);
 			ft_printf_styled("Collect all items first!\n", 'r', 'b');
-			ft_printf("Ready for laundary basket now: only %d out of %d\n", game->collected, game->to_collect);
+			ft_printf("Ready for laundary basket now: only %d out of %d\n",
+				game->collected, game->to_collect);
 		}
 	}
 }
