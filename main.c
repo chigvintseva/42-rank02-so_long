@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:57:15 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 03:40:29 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 03:41:59 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int	main(int argc, char **argv)
 
 	check_input(argc, argv);
 	init_game(&game);
-	// load_map(&game, argv[1]);
+	load_map(&game, argv[1]);
 	// if (map_valid(&game) == 0)
 	// 	invalid_map_error(&game);
 	// start_game(&game, argv[1]);
