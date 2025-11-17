@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 04:42:01 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 04:42:21 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 12:00:45 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,4 +52,26 @@ void	count_elements(t_game *game, t_counts *counts)
 		}
 		i++;
 	}
+}
+
+int	count_collectables(t_game *game)
+{
+	int	i;
+	int	j;
+	int	cnt;
+
+	cnt = 0;
+	i = 0;
+	while (i < (game->map.rows))
+	{
+		j = 0;
+		while (j < (game->map.columns))
+		{
+			if (game->map.map_sketch[i][j] == 'C')
+				cnt++;
+			j++;
+		}
+		i++;
+	}
+	return (cnt);
 }
