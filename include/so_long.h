@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:22:03 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 17:34:35 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 18:29:18 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ typedef struct s_game
 void	error_exit(char *message);
 void	error_exit_game(t_game *game, char *message);
 void	success_game(t_game *game);
+void	cleanup_images(t_game *game);
 
 // user input.c
 void	check_input(int argc, char **argv);
