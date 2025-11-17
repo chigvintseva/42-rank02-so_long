@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 03:03:11 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 03:38:29 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 04:26:20 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ void	check_input(int argc, char **argv)
 		error_exit("Invalid input.\nValid example: ./so_long maps/map.ber\n");
 	len = ft_strlen(argv[1]);
 	if (len < 5)
-		error_exit("Invalid filename\n");
+		error_exit("Invalid input.\nValid example: ./so_long maps/map.ber\n");
 	if (ft_strncmp(&argv[1][len - 4], ".ber", 4) != 0)
 		error_exit("Invalid filename or filetype.\n");
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 	{
-		perror("Error\n Not able to open map file\n");
+		perror("Error\nNot able to open map file\n");
 		exit(EXIT_FAILURE);
 	}
 	close(fd);	
