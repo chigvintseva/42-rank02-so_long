@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 00:04:13 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 04:19:46 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 04:34:10 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,18 @@ void	load_map(t_game *game, char *file_map)
 	if (read_map(game, fd) == 0)
 		error_exit("Mar reading error\n");
 	close(fd);
+}
+int	map_valid(t_game *game)
+{
+	if (!map_rectangular(game))
+		return (0);
+	if (!map_walls(game))
+		return (0);
+	if (!map_characters(game))
+		return (0);
+	if (!map_elements(game))
+		return (0);
+	if (!map_playable(game))
+		return (0);
+	return (1);		
 }

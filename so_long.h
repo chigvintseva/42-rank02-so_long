@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:22:03 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 04:18:31 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 04:39:59 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,13 @@ typedef struct s_map
 	int		columns;
 }	t_map;
 
+typedef struct s_counts
+{
+	int	player;
+	int	exit;
+	int	collectible;
+}	t_counts;
+
 // all game info (prev.structs) + playing setup n moves
 typedef struct s_game
 {
@@ -74,9 +81,18 @@ void	check_input(int argc, char **argv);
 void	init_game(t_game *game);
 
 // map parsing.c
-int	count_map_rows(char *file_map);
-int	read_map(t_game *game, int fd);
+int		count_map_rows(char *file_map);
+int		read_map(t_game *game, int fd);
 void	load_map(t_game *game, char *file_map);
+int		map_valid(t_game *game);
 
+// validity checks
+int		map_rectangular(t_game *game);
+int		map_walls(t_game *game);
+int		map_characters(t_game *game);
+int		map_elements(t_game *game);
+int		map_playable(t_game *game);
+
+//validity checks helpers 
 
 #endif
