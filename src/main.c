@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:57:15 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 18:36:53 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 18:42:11 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char **argv)
 	init_game(&game);
 	load_map(&game, argv[1]);
 	if (!map_valid(&game))
-		error_exit_game(&game, "Invalip map!\n");
+		error_exit_game(&game, "Invalid map!\n");
 	else 
 		ft_printf_styled("Valid Map! Let's Go!\n", 'g', 'b');
 	game.to_collect = count_collectables(&game);

@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:22:03 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 18:29:18 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 18:38:32 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,6 @@
 // keys for mlx_hook registration
 # define KEYBOARD_KEY_PRESSED 2
 # define WIN_CROSS_PRESSED 17
-
-//keys (events) mask for hooks registration
-// standard keypress for minilibx, OS->X11->MLX
-# define KEYBOARD_MASK (1L << 0)
-# define WIN_CROSS_MASK 0
 
 // keys that can be pressed n require reaction
 # define ESC 65307
