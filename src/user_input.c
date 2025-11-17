@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 03:03:11 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 18:35:49 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 19:13:32 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,9 @@ void	init_game(t_game *game)
 	game->map.columns = 0;
 	game->player.x = 0;
 	game->player.y = 0;
+	game->wall.img = NULL;
+	game->floor.img = NULL;
+	game->player_img.img = NULL;
+	game->collect.img = NULL;
+	game->exit.img = NULL;
 }

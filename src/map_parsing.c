@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 00:04:13 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 18:37:08 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 19:22:12 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,21 @@ int	count_map_rows(char *file_map)
 	int		fd;
 	int		rows;
 	char	*line;
+	int		last_len;
 
 	fd = open(file_map, O_RDONLY);
 	if (fd == -1)
 		return (-1);
 	rows = 0;
+	last_len = 1;
 	line = get_next_line(fd);
 	while (line != NULL)
 	{
-		rows++;
+		last_len = ft_strlen(line);
+		if (last_len > 0 && line[last_len - 1] == '\n')
+			last_len--;
+		if (last_len > 0)
+			rows++;
 		free(line);
 		line = get_next_line(fd);
 	}
@@ -79,7 +85,7 @@ void	load_map(t_game *game, char *file_map)
 		error_exit("Couldn't open the map file\n");
 	}
 	if (read_map(game, fd) == 0)
-		error_exit("Mar reading error\n");
+		error_exit("Map reading error\n");
 	close(fd);
 }
 
