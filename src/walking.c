@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 11:51:05 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 18:05:37 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 18:33:53 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int	can_walk(t_game *game, int new_x, int new_y)
 		return (0);
 	return (1);
 }
+
 void	walk(t_game *game, int to_x, int to_y)
 {
 	int	new_x;

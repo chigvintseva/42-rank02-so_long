@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 03:03:11 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 18:04:59 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 18:35:49 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	check_input(int argc, char **argv)
 		perror("Error\nNot able to open map file\n");
 		exit(EXIT_FAILURE);
 	}
-	close(fd);	
+	close(fd);
 }
 
 void	init_game(t_game *game)

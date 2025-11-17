@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 09:17:36 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 18:04:59 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 18:36:01 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,6 @@ void	render_map(t_game *game)
 		}
 		i++;
 	}
-	place_img_in_game(game, game->player_img.img, game->player.x, game->player.y);
+	place_img_in_game(game, game->player_img.img, \
+		game->player.x, game->player.y);
 }

@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 04:29:31 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 18:04:59 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 18:36:11 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	map_rectangular(t_game *game)
 	}
 	return (1);
 }
+
 int	map_walls(t_game *game)
 {
 	if (!check_top_bottom_walls(game))
