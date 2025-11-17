@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 04:29:31 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 04:40:08 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 04:55:56 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	map_rectangular(t_game *game)
 {
-	int		i;
-	size_t	len;
+	int	i;
+	int	len;
 
 	if (game->map.rows < 3 || game->map.columns < 3)
 		return (0);
@@ -29,7 +29,7 @@ int	map_rectangular(t_game *game)
 	}
 	return (1);
 }
-int	map_walls(game)
+int	map_walls(t_game *game)
 {
 	if (!check_top_bottom_walls(game))
 		return (0);

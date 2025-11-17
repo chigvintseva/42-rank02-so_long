@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:22:03 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 04:39:59 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 04:52:23 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,12 +80,6 @@ void	success_game(t_game *game);
 void	check_input(int argc, char **argv);
 void	init_game(t_game *game);
 
-// map parsing.c
-int		count_map_rows(char *file_map);
-int		read_map(t_game *game, int fd);
-void	load_map(t_game *game, char *file_map);
-int		map_valid(t_game *game);
-
 // validity checks
 int		map_rectangular(t_game *game);
 int		map_walls(t_game *game);
@@ -94,5 +88,25 @@ int		map_elements(t_game *game);
 int		map_playable(t_game *game);
 
 //validity checks helpers 
+int		check_top_bottom_walls(t_game *game);
+int		check_side_walls(t_game *game);
+int		is_valid_char(char c);
+
+//elements counting 
+void	init_counts(t_counts *counts);
+void	process_char(t_game *game, t_counts *counts, int i, int j);
+void	count_elements(t_game *game, t_counts *counts);
+
+// fill the map from the file input data (when valid)
+char	**create_visited_map(t_game *game);
+void	free_visited_map(char **visited, int rows);
+void	flood_fill(t_game *game, char **visited, int y, int x);
+int		check_all_reachable(t_game *game, char **visited);
+
+// map parsing.c
+int		count_map_rows(char *file_map);
+int		read_map(t_game *game, int fd);
+void	load_map(t_game *game, char *file_map);
+int		map_valid(t_game *game);
 
 #endif
