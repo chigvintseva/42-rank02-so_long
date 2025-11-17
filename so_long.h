@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:22:03 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 09:21:13 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 11:48:32 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@
 # define TILE 64
 
 # define ESC 65307
-# define W 119
-# define A 97
-# define S 115
-# define D 100
+# define W_KEY 119
+# define A_KEY 97
+# define S_KEY 115
+# define D_KEY 100
 # define UP 65362
 # define LEFT 65361
 # define DOWN 65364
@@ -133,7 +133,9 @@ void	load_image(t_game *game, t_image *img, char *path);
 void	load_textures(t_game *game);
 
 // render map.c
-
+void	place_img_in_game(t_game *game, void *img, int x, int y);
+void	render_game_part(t_game *game, char part, int x, int y);
+void	render_map(t_game *game);
 
 // events register.c
 
