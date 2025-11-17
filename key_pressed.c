@@ -6,19 +6,20 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 09:17:26 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 13:28:48 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:33:14 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	close_window(t_game *game)
+int	close_window(t_game *game)
 {
 	ft_printf_styled("Window was closed.\n", 'r', 'b');
 	success_game(game);
+	reurn (0);
 }
 
-void	key_pressed(t_game *game, int key_pressed)
+int	key_pressed(t_game *game, int key_pressed)
 {
 	int	to_x;
 	int	to_y;
@@ -38,6 +39,7 @@ void	key_pressed(t_game *game, int key_pressed)
 	else
 		return ;
 	walk(game, to_x, to_y);
+	return (0);
 }
 
 void	register_hooks(t_game *game)

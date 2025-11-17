@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 11:51:05 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 13:03:33 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:32:16 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	is_exit(t_game *game, int x, int y)
 		if (game->collected == game->to_collect)
 		{
 			ft_printf_styled("Congratulations!\n", 'w', 'b');
-			ft_printf_styled("You won in %d moves!\n", 'g', 'b');
+			ft_printf("You won in %d moves!\n", game->moves);
 			success_game(game);
 		}
 		else
@@ -41,9 +41,15 @@ void	is_collectable(t_game *game, int x, int y)
 	}
 }
 
-int	can_walk(t_game *game, int x, int y)
+int	can_walk(t_game *game, int new_x, int new_y)
 {
-	
+	if (new_x <= 0 || new_x >= (game->map.columns))
+		return (0);
+	if (new_y <= 0 || new_y >= (game->map.rows))
+		returh (0);
+	if (game->map.map_sketch[new_x][new_y] == '1')
+		return (0);
+	return (1);
 }
 void	walk(t_game *game, int to_x, int to_y)
 {

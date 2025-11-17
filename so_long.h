@@ -6,13 +6,14 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:22:03 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 12:57:46 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:25:17 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
+// libraries
 # include "libft/libft.h"
 # include "mlx.h"
 # include "X11/keysym.h"
@@ -23,6 +24,7 @@
 # include <stdio.h>
 # include <errno.h>
 
+// images
 # define EXIT_IMG "./textures/exit.xpm"
 # define PLAYER_IMG "./textures/player.xpm"
 # define COLLECT_IMG "./textures/collect.xpm"
@@ -31,6 +33,16 @@
 
 # define TILE 64
 
+// keys for mlx_hook registration
+# define KEYBOARD_KEY_PRESSED 2
+# define WIN_CROSS_PRESSED 17
+
+//keys (events) mask for hooks registration
+// standard keypress for minilibx, OS->X11->MLX
+# define KEYBOARD_MASK (1L << 0)
+# define WIN_CROSS_MASK 0
+
+// keys that can be pressed n require reaction
 # define ESC 65307
 # define W_KEY 119
 # define A_KEY 97

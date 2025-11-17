@@ -6,17 +6,11 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 04:21:52 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 13:08:42 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:23:25 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-void	close_window(t_game *game)
-{
-	ft_printf_styled("Window was closed.\n", 'r', 'b');
-	success_game(game);
-}
 
 void	error_exit(char *message)
 {
