@@ -6,11 +6,11 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 04:41:03 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 04:42:46 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:38:48 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 int	check_top_bottom_walls(t_game *game)
 {

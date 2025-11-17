@@ -6,11 +6,11 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 03:03:11 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 09:01:24 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:38:59 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 void	check_input(int argc, char **argv)
 {

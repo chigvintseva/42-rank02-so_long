@@ -6,11 +6,11 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 09:17:36 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 11:47:58 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:38:51 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 void	place_img_in_game(t_game *game, void *img, int x, int y)
 {

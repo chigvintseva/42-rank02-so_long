@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:22:03 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 13:25:17 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:36:28 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,7 +149,15 @@ void	place_img_in_game(t_game *game, void *img, int x, int y);
 void	render_game_part(t_game *game, char part, int x, int y);
 void	render_map(t_game *game);
 
-// events register.c
+//walking!
+void	is_exit(t_game *game, int x, int y);
+void	is_collectable(t_game *game, int x, int y);
+int		can_walk(t_game *game, int new_x, int new_y);
+void	walk(t_game *game, int to_x, int to_y);
 
+// key_pressed.c
+int		close_window(t_game *game);
+int		key_pressed(t_game *game, int key_pressed);
+void	register_hooks(t_game *game);
 
 #endif

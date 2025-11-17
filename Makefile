@@ -6,34 +6,32 @@
 #    By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/16 16:24:27 by achigvin          #+#    #+#              #
-#    Updated: 2025/11/17 09:21:06 by achigvin         ###   ########.fr        #
+#    Updated: 2025/11/17 13:43:16 by achigvin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
 
-LIBFT = libft/libft.a
+LIBFT = include/libft/libft.a
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -Iminilibx-linux -O2 -g
 MLXFLAGS = -Lminilibx-linux -lmlx -lXext -lX11 -lm -lz
 
-#---------- maps and textures??--------
-
-
 # ---------
 
-SRC = main.c \
-		user_input.c \
-		map_parsing.c \
-		exit_game.c \
-		map_valid_check.c \
-		map_valid_helpers.c \
-		map_fill.c \
-		map_elements_cnt.c \
-		start_game.c \
-		event_register.c \
-		render_map.c \
+SRC = src/main.c \
+		src/exit_game.c \
+		src/key_pressed.c \
+		src/map_elements_cnt.c \
+		src/map_fill.c \
+		src/map_parsing.c \
+		src/map_valid_check.c \
+		src/map_valid_helpers.c \
+		src/render_map.c \
+		src/start_game.c \
+		src/user_input.c \
+		src/walking.c
 	
 
 # ------------creating objects---

@@ -6,11 +6,11 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 04:42:53 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 04:42:57 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:38:35 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 char	**create_visited_map(t_game *game)
 {

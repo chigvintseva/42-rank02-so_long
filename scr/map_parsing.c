@@ -6,11 +6,11 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 00:04:13 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 05:04:24 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:38:39 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../include/so_long.h"
 
 int	count_map_rows(char *file_map)
 {
