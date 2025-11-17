@@ -6,7 +6,7 @@
 #    By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/16 16:24:27 by achigvin          #+#    #+#              #
-#    Updated: 2025/11/17 00:06:18 by achigvin         ###   ########.fr        #
+#    Updated: 2025/11/17 04:22:23 by achigvin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,11 @@ MLXFLAGS = -Lminilibx-linux -lmlx -lXext -lX11 -lm -lz
 # ---------
 
 SRC = main.c \
-		input_keys.c \
+		user_input.c \
 		map_parsing.c \
-		render_map_graphics.c \
+		exit_game.c \
+		
+		
 	
 
 # ------------creating objects---

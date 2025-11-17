@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 00:04:13 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 04:10:37 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 04:19:46 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,11 @@ int	count_map_rows(char *file_map)
 	return (rows);
 }
 
-int	read_map(t_game *game, char *file_map, int fd)
+int	read_map(t_game *game, int fd)
 {
-	size_t	i;
+	int		i;
 	char	*line;
-	size_t	line_length;
+	int		line_length;
 	
 	i = 0;
 	while (i < game->map.rows)
@@ -45,12 +45,12 @@ int	read_map(t_game *game, char *file_map, int fd)
 		line = get_next_line(fd);
 		if (!line)
 			return (close(fd), 0);
-			line_length = ft_strlen(line);
+		line_length = ft_strlen(line);
 		if (line[line_length - 1] == '\n')
-			line[line_length - 1] == '\0';
+			line[line_length - 1] = '\0';
 		game->map.map_sketch[i] = line;
 		if (i == 0)
-			game->map.columns == line_length;
+			game->map.columns = line_length;
 		i++;
 	}
 	game->map.map_sketch[i] = NULL;
@@ -60,7 +60,6 @@ int	read_map(t_game *game, char *file_map, int fd)
 void	load_map(t_game *game, char *file_map)
 {
 	int		fd;
-	char	*line;
 
 	game->map.rows = count_map_rows(file_map);
 	if (game->map.rows <= 0)
@@ -74,7 +73,7 @@ void	load_map(t_game *game, char *file_map)
 		free(game->map.map_sketch);
 		error_exit("Couldn't open the map file\n");
 	}
-	if (read_map(game, file_map, fd) == 0)
+	if (read_map(game, fd) == 0)
 		error_exit("Mar reading error\n");
 	close(fd);
 }
