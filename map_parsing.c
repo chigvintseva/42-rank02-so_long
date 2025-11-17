@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 00:04:13 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 04:34:10 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 05:04:24 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,13 @@ int	read_map(t_game *game, int fd)
 		if (!line)
 			return (close(fd), 0);
 		line_length = ft_strlen(line);
-		if (line[line_length - 1] == '\n')
+		if (line_length > 0 && (line[line_length - 1] == '\n'))
+		{
 			line[line_length - 1] = '\0';
+			line_length--;
+		}
+		if (line_length == 0)
+			return (free(line), close(fd), 0);
 		game->map.map_sketch[i] = line;
 		if (i == 0)
 			game->map.columns = line_length;
