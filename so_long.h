@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:22:03 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 09:02:47 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 09:07:42 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,15 @@
 # include <stdio.h>
 # include <errno.h>
 
-# define W_WIDTH 32
-# define W_HEIGHT 32
-
-# define ESC 53
-
 # define EXIT_IMG "./textures/exit.xpm"
 # define PLAYER_IMG "./textures/player.xpm"
 # define COLLECT_IMG "./textures/collect.xpm"
 # define WALL_IMG "./textures/wall.xpm"
 # define FLOOR_IMG "./textures/floor_img.xpm"
 
+# define TILE 64
+
+# define ESC 65307
 # define W 119
 # define A 97
 # define S 115
