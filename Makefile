@@ -6,7 +6,7 @@
 #    By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/16 16:24:27 by achigvin          #+#    #+#              #
-#    Updated: 2025/11/17 04:53:48 by achigvin         ###   ########.fr        #
+#    Updated: 2025/11/17 09:21:06 by achigvin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,8 +31,9 @@ SRC = main.c \
 		map_valid_helpers.c \
 		map_fill.c \
 		map_elements_cnt.c \
-		
-		
+		start_game.c \
+		event_register.c \
+		render_map.c \
 	
 
 # ------------creating objects---

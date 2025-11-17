@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:22:03 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 09:07:42 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 09:21:13 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,5 +126,16 @@ int		count_map_rows(char *file_map);
 int		read_map(t_game *game, int fd);
 void	load_map(t_game *game, char *file_map);
 int		map_valid(t_game *game);
+
+// start game
+void	start_game(t_game *game);
+void	load_image(t_game *game, t_image *img, char *path);
+void	load_textures(t_game *game);
+
+// render map.c
+
+
+// events register.c
+
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 16:57:15 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 08:21:26 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 09:21:39 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ int	main(int argc, char **argv)
 	 	error_exit_game(&game, "Invalip map!\n");
 	else 
 		ft_printf_styled("Valid Map! Let's Go!\n", 'g', 'b');
-	// start_game(&game, argv[1]);
-	// load_textures(&game);
+	start_game(&game);
+	load_textures(&game);
 	// render_map(&game);
 	// mlx_key_hook(game.mlx_win, key_handler(&game), &game);
 	// GAME LOOP
