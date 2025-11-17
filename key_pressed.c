@@ -6,11 +6,17 @@
 /*   By: achigvin <achigvin@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 09:17:26 by achigvin          #+#    #+#             */
-/*   Updated: 2025/11/17 13:04:17 by achigvin         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:28:48 by achigvin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+void	close_window(t_game *game)
+{
+	ft_printf_styled("Window was closed.\n", 'r', 'b');
+	success_game(game);
+}
 
 void	key_pressed(t_game *game, int key_pressed)
 {
@@ -34,3 +40,8 @@ void	key_pressed(t_game *game, int key_pressed)
 	walk(game, to_x, to_y);
 }
 
+void	register_hooks(t_game *game)
+{
+	mlx_hook(game->mlx_win, KEYBOARD_KEY_PRESSED, KEYBOARD_MASK, key_pressed, game);
+	mlx_hook(game->mlx_win, WIN_CROSS_PRESSED, WIN_CROSS_MASK, close_window, game);
+}
